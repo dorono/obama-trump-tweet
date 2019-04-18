@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Factom Harmony Notary Simulation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/main.css" /> -->
+    <script src="./assets/js/main.js"></script>
+</head>
+
+<body>
+
+    <button id="simulateBtn" class="waves-effect waves-light btn-large">
+        Run Notary Simulation
+    </button>
+
+    <script>
+        $(document).ready(function () {
+            $('#simulateBtn').on('click', function (e) {
+                e.preventDefault();
+                console.log('CLICK');
+                $.get('/simulate', function (data) {
+                    console.log('DATA DATA', data);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
