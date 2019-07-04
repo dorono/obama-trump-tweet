@@ -17,19 +17,30 @@
 
 <body>
 
-    <button id="simulateBtn" class="waves-effect waves-light btn-large">
-        Run Notary Simulation
-    </button>
+    <div id="tweets">
+        <ul>
+
+        </ul>
+    </div>
 
     <script>
         $(document).ready(function () {
-            $('#simulateBtn').on('click', function (e) {
-                e.preventDefault();
-                console.log('CLICK');
-                $.get('/simulate', function (data) {
-                    console.log('DATA DATA', data);
+            $.get('/simulate', function (data) {
+                console.log('DATA DATA', data);
+                data.statuses.forEach(function (statuses) {
+                    $('id#tweets').appendTo('<li>'+ text + '</li>')
                 });
             });
+
+
+
+            // $('#simulateBtn').on('click', function (e) {
+            //     e.preventDefault();
+            //     console.log('CLICK');
+            //     $.get('/simulate', function (data) {
+            //         console.log('DATA DATA', data);
+            //     });
+            // });
         });
     </script>
 </body>
